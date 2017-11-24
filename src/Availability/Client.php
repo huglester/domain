@@ -77,6 +77,7 @@ class Client
         $domainLength = mb_strlen($domain->getDomainNameNoTld());
 
         if (isset($data['lengthMin']) and $data['lengthMin'] > $domainLength) {
+            return false;
             throw new \Exception(sprintf(
                 'Domain name %s - length to small',
                 $domain->getDomainName()
@@ -84,6 +85,7 @@ class Client
         }
 
         if (isset($data['lengthMax']) and $data['lengthMax'] < $domainLength) {
+            return false;
             throw new \Exception(sprintf(
                 'Domain name %s - length to big',
                 $domain->getDomainName()
