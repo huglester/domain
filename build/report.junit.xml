@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="Webas\Domain\Test\AgencyTest" file="/Users/huglester/tmp/domain/tests/AgencyTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.939327">
-    <testcase name="available" class="Webas\Domain\Test\AgencyTest" classname="Webas.Domain.Test.AgencyTest" file="/Users/huglester/tmp/domain/tests/AgencyTest.php" line="39" assertions="1" time="0.552636"/>
-    <testcase name="registered" class="Webas\Domain\Test\AgencyTest" classname="Webas.Domain.Test.AgencyTest" file="/Users/huglester/tmp/domain/tests/AgencyTest.php" line="49" assertions="1" time="0.386691"/>
-  </testsuite>
-</testsuites>
