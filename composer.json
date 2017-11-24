@@ -1,31 +1,34 @@
 {
-    "name": "cocur/domain",
+    "name": "webas/domain",
     "type": "library",
     "description": "Check domain name availability and WHOIS",
-    "keywords": ["domain", "whois"],
+    "keywords": [
+        "domain",
+        "whois"
+    ],
     "license": "MIT",
     "authors": [
         {
             "name": "Florian Eckerstorfer",
             "email": "florian@eckerstorfer.co",
             "homepage": "http://florian.ec"
+        },
+        {
+            "name": "Jaroslav Petrusevic",
+            "email": "jaroslav@webas.lt",
+            "homepage": "https://www.webas.lt"
         }
     ],
     "require": {
-        "php":               ">=5.4",
+        "php": "^7.0.0",
         "braincrafted/json": "~0.2"
     },
     "require-dev": {
-        "phpunit/phpunit":        "~4.0",
-        "mockery/mockery":        "~0.9",
-        "satooshi/php-coveralls": "dev-master",
-        "seld/jsonlint":          "~1.1",
-        "sami/sami":              "~3.0",
-        "kherge/box":             "~2.4"
+        "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "Cocur\\Domain\\": "src"
+            "Webas\\Domain\\": "src"
         }
     }
 }

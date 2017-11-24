@@ -1,8 +1,0 @@
-[{
-    "tld": "aero",
-    "description": "air-transport industry",
-    "whoisServer": "aero.whois-servers.net",
-    "patterns": {
-        "notRegistered": "/NOT FOUND/"
-    }
-}]

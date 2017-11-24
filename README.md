@@ -68,9 +68,9 @@ The library contains two main classes: `Whois\Client` and `Availability\Client` 
 #### Whois
 
 ```php
-use Cocur\Domain\Connection\ConnectionFactory;
-use Cocur\Domain\Data\DataLoader;
-use Cocur\Domain\Whois\Client;
+use Webas\Domain\Connection\ConnectionFactory;
+use Webas\Domain\Data\DataLoader;
+use Webas\Domain\Whois\Client;
 
 $factory = new ConnectionFactory();
 $dataLoader = new DataLoader();
@@ -86,10 +86,10 @@ echo $client->query($domainName);
 To check the availability of a domain name the `Availability\Client` requires an instance of `Whois\Client`.
 
 ```php
-use Cocur\Domain\Connection\ConnectionFactory;
-use Cocur\Domain\Data\DataLoader;
-use Cocur\Domain\Whois\Client as WhoisClient;
-use Cocur\Domain\Availability\Client as AvailabilityClient;
+use Webas\Domain\Connection\ConnectionFactory;
+use Webas\Domain\Data\DataLoader;
+use Webas\Domain\Whois\Client as WhoisClient;
+use Webas\Domain\Availability\Client as AvailabilityClient;
 
 $factory = new ConnectionFactory();
 $dataLoader = new DataLoader();

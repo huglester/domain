@@ -1,24 +1,14 @@
 <?php
 
-/**
- * This file is part of cocur/domain.
- *
- * (c) Florian Eckerstorfer <florian@eckerstorfer.co>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Webas\Domain\Availability;
 
-namespace Cocur\Domain\Availability;
-
-use Cocur\Domain\Domain;
-use Cocur\Domain\Data\Data;
-use Cocur\Domain\Whois\Client as WhoisClient;
+use Webas\Domain\Data\Data;
+use Webas\Domain\Domain;
+use Webas\Domain\Whois\Client as WhoisClient;
 
 /**
  * Client
  *
- * @package    cocur/domain
  * @subpackage availability
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2014 Florian Eckerstorfer
@@ -26,6 +16,7 @@ use Cocur\Domain\Whois\Client as WhoisClient;
  */
 class Client
 {
+
     /** @var WhoisClient */
     private $whoisClient;
 
@@ -39,12 +30,12 @@ class Client
      * Constructor.
      *
      * @param WhoisClient $whoisClient WhoisClient object
-     * @param Data        $data        Data object
+     * @param Data $data Data object
      */
     public function __construct(WhoisClient $whoisClient, Data $data)
     {
         $this->whoisClient = $whoisClient;
-        $this->data        = $data;
+        $this->data = $data;
     }
 
     /**
@@ -70,7 +61,7 @@ class Client
     /**
      * Returns if the given domain is available.
      *
-     * @param Domain|string  $domain Domain.
+     * @param Domain|string $domain Domain.
      *
      * @return boolean `true` if the domain is available, `false` if not.
      *

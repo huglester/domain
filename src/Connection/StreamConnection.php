@@ -1,15 +1,6 @@
 <?php
 
-/**
- * This file is part of cocur/domain.
- *
- * (c) Florian Eckerstorfer <florian@eckerstorfer.co>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Cocur\Domain\Connection;
+namespace Webas\Domain\Connection;
 
 /**
  * StreamConnection
@@ -28,8 +19,8 @@ class StreamConnection implements ConnectionInterface
     /**
      * Opens a connection to the given hostname and port.
      *
-     * @param string  $hostname Hostname
-     * @param integer $port     Port
+     * @param string $hostname Hostname
+     * @param integer $port Port
      *
      * @return StreamConnection
      *

@@ -1,21 +1,12 @@
 <?php
 
-/**
- * This file is part of cocur/domain.
- *
- * (c) Florian Eckerstorfer <florian@eckerstorfer.co>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Webas\Domain\Whois;
 
-namespace Cocur\Domain\Whois;
-
-use Cocur\Domain\Domain;
-use Cocur\Domain\Data\Data;
-use Cocur\Domain\Data\DataException;
-use Cocur\Domain\Connection\ConnectionFactory;
-use Cocur\Domain\Connection\ConnectionException;
+use Webas\Domain\Connection\ConnectionException;
+use Webas\Domain\Connection\ConnectionFactory;
+use Webas\Domain\Data\Data;
+use Webas\Domain\Data\DataException;
+use Webas\Domain\Domain;
 
 /**
  * Client
@@ -38,7 +29,7 @@ class Client
      * Constructor.
      *
      * @param ConnectionFactory $factory
-     * @param Data              $data
+     * @param Data $data
      *
      * @codeCoverageIgnore
      */
