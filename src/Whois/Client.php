@@ -19,6 +19,7 @@ use Webas\Domain\Domain;
  */
 class Client
 {
+
     /** @var ConnectionFactory */
     private $factory;
 
@@ -77,12 +78,20 @@ class Client
             throw new WhoisException(sprintf('Retrieved empty WHOIS for "%s".', $domain->getDomainName()));
         }
 
-        if (true === isset($data['patterns']['quotaExceeded']) &&
+        if (isset($data['patterns']['quotaExceeded']) &&
             preg_match($data['patterns']['quotaExceeded'], $whois)) {
-            throw new QuotaExceededException(sprintf('Quota exceeded for WHOIS server "%s".', $data['whoisServer']));
+
+            // Exit now if no wait period
+            if (! isset($data['patterns']['waitPeriod'])) {
+                throw new QuotaExceededException(sprintf(
+                    'Quota exceeded for WHOIS server "%s".',
+                    $data['whoisServer']
+                ));
+            }
         }
-        if (true === isset($data['patterns']['waitPeriod']) &&
-            true === isset($data['waitPeriod']) &&
+
+        if (isset($data['patterns']['waitPeriod']) &&
+            isset($data['waitPeriod']) &&
             preg_match($data['patterns']['waitPeriod'], $whois)) {
             sleep($data['waitPeriod']);
 

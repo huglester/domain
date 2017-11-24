@@ -62,6 +62,13 @@ class Domain
         return $this->domainName;
     }
 
+    public function getDomainNameNoTld()
+    {
+        $domain = rtrim($this->getDomainName(), $this->getTld());
+
+        return rtrim($domain, '.');
+    }
+
     /**
      * Returns the TLD of the domain name.
      *

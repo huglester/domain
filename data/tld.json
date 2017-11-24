@@ -30,7 +30,7 @@
         "description": "business",
         "whoisServer": "biz.whois-servers.net",
         "patterns": {
-            "notRegistered": "/Not found:/"
+            "notRegistered": "/No Data Found/"
         }
     },
     {
@@ -528,11 +528,12 @@
     {
         "tld": "cz",
         "description": "Czech Republic",
-        "whoisServer": "cz.whois-servers.net",
+        "whoisServer": "whois.nic.cz",
         "patterns": {
             "notRegistered": "/no entries found/",
             "quotaExceeded": "/Your connection limit exceeded/"
-        }
+        },
+        "waitPeriod": 5
     },
     {
         "tld": "dd",
@@ -591,7 +592,7 @@
         "description": "Estonia",
         "whoisServer": "ee.whois-servers.net",
         "patterns": {
-            "notRegistered": "/% No entries found\\./"
+            "notRegistered": "/Domain not found/"
         }
     },
     {
@@ -1442,7 +1443,10 @@
         "whoisServer": "ru.whois-servers.net",
         "patterns": {
             "notRegistered": "/No entries found for the selected source\\(s\\)\\./"
-        }
+        },
+        "idn": false,
+        "lengthMin": 3,
+        "lengthMax": 63
     },
     {
         "tld": "rw",

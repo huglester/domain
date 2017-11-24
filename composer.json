@@ -30,5 +30,13 @@
         "psr-4": {
             "Webas\\Domain\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webas\\Domain\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
     }
 }

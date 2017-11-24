@@ -62,10 +62,10 @@ class Client
      * Returns if the given domain is available.
      *
      * @param Domain|string $domain Domain.
-     *
-     * @return boolean `true` if the domain is available, `false` if not.
+     * @return bool `true` if the domain is available, `false` if not.
      *
      * @throws AvailabilityException when no pattern exists for the given TLD.
+     * @throws \Exception
      */
     public function isAvailable($domain)
     {
@@ -74,13 +74,29 @@ class Client
         }
 
         $data = $this->data->getByTld($domain->getTld());
+        $domainLength = mb_strlen($domain->getDomainNameNoTld());
+
+        if (isset($data['lengthMin']) and $data['lengthMin'] > $domainLength) {
+            throw new \Exception(sprintf(
+                'Domain name %s - length to small',
+                $domain->getDomainName()
+            ));
+        }
+
+        if (isset($data['lengthMax']) and $data['lengthMax'] < $domainLength) {
+            throw new \Exception(sprintf(
+                'Domain name %s - length to big',
+                $domain->getDomainName()
+            ));
+        }
+
         if (false === isset($data['patterns']['notRegistered'])) {
             throw new AvailabilityException(
                 sprintf('No pattern exists to check availability of %s domains.', $domain->getTld())
             );
         }
 
-        $this->lastWhoisResult = $this->whoisClient->query($domain);
+        $this->lastWhoisResult = $this->getWhoisClient()->query($domain);
 
         if (preg_match($data['patterns']['notRegistered'], $this->lastWhoisResult)) {
             return true;
