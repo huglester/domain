@@ -50,7 +50,7 @@
         },
         "idn": true,
         "lengthMin": 3,
-        "lengthMax": 3
+        "lengthMax": 63
     },
     {
         "tld": "coop",
