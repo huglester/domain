@@ -1055,7 +1055,7 @@
     {
         "tld": "lt",
         "description": "Lithuania",
-        "whoisServer": "lt.whois-servers.net",
+        "whoisServer": "whois.domreg.lt",
         "patterns": {
             "notRegistered": "/Status:\\s+available/",
             "reserved": "/Status:\\s+restrictedDisposal/"
